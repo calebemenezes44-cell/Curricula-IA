@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CurrículoIA — Templates Canva</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#00C896;--preto:#080808;--cinza:#181818;--cinza2:#222;--borda:#2A2A2A;--txt:#EAEAEA;--sub:#777;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--preto);color:var(--txt);overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:#08080895;backdrop-filter:blur(20px);border-bottom:1px solid #ffffff08;}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#fff;}.logo span{color:var(--verde);}
+.nav-btn{background:var(--verde);color:#000;border:none;padding:10px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,#00C89618 0%,transparent 65%);}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#00C89615;border:1px solid #00C89635;color:var(--verde);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:500;margin-bottom:32px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--verde);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(40px,8vw,84px);font-weight:900;line-height:1;margin-bottom:24px;}
+h1 em{color:var(--verde);font-style:italic;display:block;}
+.sub{font-size:clamp(15px,2vw,19px);color:var(--sub);max-width:520px;line-height:1.75;margin-bottom:40px;font-weight:300;}
+.btn-hero{background:var(--verde);color:#000;border:none;padding:16px 40px;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:all .2s;}
+.btn-hero:hover{background:#00A878;transform:translateY(-2px);box-shadow:0 16px 40px #00C89640;}
+.stats{display:flex;gap:48px;margin-top:56px;flex-wrap:wrap;justify-content:center;}
+.stat-n{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--verde);}
+.stat-l{font-size:13px;color:var(--sub);margin-top:3px;}
+
+.gen-section{background:#101010;border-top:1px solid #1A1A1A;}
+.sec{max-width:1000px;margin:0 auto;padding:72px 24px;}
+.sec-tag{text-align:center;color:var(--verde);font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,48px);font-weight:700;text-align:center;margin-bottom:48px;}
+
+.form-card{background:var(--cinza);border:1px solid var(--borda);border-radius:20px;padding:clamp(24px,4vw,44px);max-width:860px;margin:0 auto;}
+.form-card h2{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:6px;}
+.form-card p{color:var(--sub);font-size:14px;margin-bottom:28px;}
+.progress-bar{height:3px;background:var(--cinza2);border-radius:100px;margin-bottom:28px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--verde);border-radius:100px;transition:width .5s ease;width:0%;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fg{display:flex;flex-direction:column;gap:6px;}
+.fg.full{grid-column:1/-1;}
+label{font-size:11px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:1.5px;}
+input,textarea,select{background:var(--cinza2);border:1px solid #2E2E2E;border-radius:9px;padding:12px 14px;color:var(--txt);font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color .2s;width:100%;}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--verde);}
+input::placeholder,textarea::placeholder{color:#444;}
+select option{background:#222;}
+textarea{resize:vertical;min-height:80px;}
+
+.custom-sec{margin-top:28px;border-top:1px solid var(--borda);padding-top:24px;}
+.custom-label{font-size:13px;font-weight:600;color:var(--verde);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+.templates{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+.topt{border:2px solid #2A2A2A;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s;position:relative;}
+.topt.on{border-color:var(--verde);}
+.topt.on::after{content:'✓';position:absolute;top:5px;right:7px;color:var(--verde);font-weight:700;font-size:13px;}
+.topt-preview{height:80px;}
+.topt-name{font-size:11px;font-weight:600;text-align:center;padding:5px;color:var(--txt);background:var(--cinza2);}
+.cores{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.copt{width:32px;height:32px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .2s;}
+.copt.on{border-color:#fff;transform:scale(1.2);}
+.gerar-btn{width:100%;margin-top:24px;background:var(--verde);color:#000;border:none;padding:17px;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;}
+.gerar-btn:hover{background:#00A878;box-shadow:0 12px 36px #00C89640;}
+.gerar-btn:disabled{opacity:.5;cursor:not-allowed;}
+
+.loading-box{display:none;text-align:center;padding:48px 20px;}
+.spin{width:44px;height:44px;border:3px solid #222;border-top-color:var(--verde);border-radius:50%;animation:girar .8s linear infinite;margin:0 auto 20px;}
+@keyframes girar{to{transform:rotate(360deg)}}
+.ls{font-size:13px;color:#444;transition:color .4s;margin-top:8px;}
+.ls.on{color:var(--verde);}
+
+#resultado{display:none;margin-top:32px;}
+.res-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
+.res-header h3{font-family:'Playfair Display',serif;font-size:22px;}
+.res-btns{display:flex;gap:8px;}
+.rbtn{padding:9px 18px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:none;display:flex;align-items:center;gap:6px;}
+.rbtn.pagar{background:var(--verde);color:#000;}
+.rbtn.copiar{background:var(--cinza2);color:var(--txt);border:1px solid #333;}
+
+/* ===== CV CANVA STYLE ===== */
+
+/* TEMPLATE 1 — COLORIDO LATERAL */
+.cv1{font-family:'Poppins',sans-serif;display:flex;min-height:680px;background:#fff;}
+.cv1-side{width:210px;flex-shrink:0;padding:36px 20px;display:flex;flex-direction:column;gap:0;}
+.cv1-foto{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:#fff;margin:0 auto 16px;border:4px solid #fff;box-shadow:0 4px 20px rgba(0,0,0,.2);}
+.cv1-nome{font-size:14px;font-weight:700;color:#fff;text-align:center;line-height:1.3;margin-bottom:3px;}
+.cv1-cargo{font-size:10px;color:rgba(255,255,255,.8);text-align:center;margin-bottom:20px;font-weight:500;}
+.cv1-divider{height:1px;background:rgba(255,255,255,.2);margin:12px 0;}
+.cv1-sec{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px;margin-top:14px;}
+.cv1-info{font-size:10px;color:rgba(255,255,255,.85);line-height:2;}
+.cv1-skill-wrap{margin-bottom:7px;}
+.cv1-skill-nome{font-size:10px;color:rgba(255,255,255,.85);margin-bottom:3px;}
+.cv1-skill-bar{height:4px;background:rgba(255,255,255,.2);border-radius:100px;overflow:hidden;}
+.cv1-skill-fill{height:100%;background:#fff;border-radius:100px;}
+.cv1-main{flex:1;padding:36px 28px;}
+.cv1-main-nome{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;margin-bottom:2px;}
+.cv1-main-cargo{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;opacity:.6;}
+.cv1-main-sec{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding-bottom:6px;border-bottom:2px solid;margin:18px 0 10px;}
+.cv1-obj{font-size:12px;color:#555;line-height:1.8;}
+.cv1-exp-cargo{font-size:13px;font-weight:700;color:#1A1A1A;}
+.cv1-exp-emp{font-size:11px;font-weight:500;margin-bottom:4px;}
+.cv1-exp-per{font-size:10px;color:#999;background:#F5F5F5;padding:2px 8px;border-radius:100px;float:right;margin-top:2px;}
+.cv1-exp-desc{font-size:11px;color:#666;line-height:1.7;padding-left:12px;margin-top:4px;clear:both;}
+.cv1-exp-desc li{margin-bottom:2px;}
+
+/* TEMPLATE 2 — HEADER COLORIDO TOP */
+.cv2{font-family:'Montserrat',sans-serif;background:#fff;min-height:680px;}
+.cv2-head{padding:0;position:relative;overflow:hidden;}
+.cv2-head-bg{height:160px;position:relative;}
+.cv2-head-shapes{position:absolute;inset:0;}
+.cv2-circle1{position:absolute;width:200px;height:200px;border-radius:50%;opacity:.3;top:-60px;right:-40px;}
+.cv2-circle2{position:absolute;width:120px;height:120px;border-radius:50%;opacity:.2;bottom:-30px;left:60px;}
+.cv2-head-content{position:absolute;bottom:-40px;left:0;right:0;display:flex;align-items:flex-end;gap:20px;padding:0 36px;}
+.cv2-foto{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#fff;border:4px solid #fff;box-shadow:0 4px 20px rgba(0,0,0,.2);flex-shrink:0;}
+.cv2-head-txt{padding-bottom:8px;}
+.cv2-nome{font-size:22px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.3);margin-bottom:2px;}
+.cv2-cargo-head{font-size:12px;color:rgba(255,255,255,.9);font-weight:500;}
+.cv2-body{padding:56px 36px 24px;display:grid;grid-template-columns:1fr 200px;gap:28px;}
+.cv2-sec{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding-bottom:6px;border-bottom:3px solid;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.cv2-obj{font-size:12px;color:#555;line-height:1.8;margin-bottom:20px;}
+.cv2-exp-cargo{font-size:13px;font-weight:700;}
+.cv2-exp-per{font-size:10px;color:#999;background:#F5F5F5;padding:2px 8px;border-radius:100px;float:right;}
+.cv2-exp-emp{font-size:11px;font-weight:500;margin-bottom:4px;clear:both;}
+.cv2-exp-desc{font-size:11px;color:#666;line-height:1.7;padding-left:12px;margin-bottom:14px;}
+.cv2-exp-desc li{margin-bottom:2px;}
+.cv2-contato-item{display:flex;align-items:center;gap:8px;font-size:11px;color:#555;margin-bottom:8px;}
+.cv2-contato-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+.cv2-skill-wrap{margin-bottom:9px;}
+.cv2-skill-nome{font-size:11px;font-weight:600;margin-bottom:3px;color:#333;}
+.cv2-skill-bar{height:5px;background:#F0F0F0;border-radius:100px;overflow:hidden;}
+.cv2-skill-fill{height:100%;border-radius:100px;}
+.cv2-tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;margin:2px;}
+
+/* TEMPLATE 3 — GEOMÉTRICO */
+.cv3{font-family:'DM Sans',sans-serif;background:#fff;min-height:680px;position:relative;overflow:hidden;}
+.cv3-deco{position:absolute;top:0;right:0;width:180px;height:100%;opacity:.07;}
+.cv3-deco-tri{width:0;height:0;border-left:180px solid transparent;border-top:680px solid #000;position:absolute;top:0;right:0;}
+.cv3-head{padding:36px 36px 24px;display:flex;gap:24px;align-items:center;position:relative;}
+.cv3-foto-wrap{position:relative;flex-shrink:0;}
+.cv3-foto{width:100px;height:100px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:#fff;}
+.cv3-foto-badge{position:absolute;bottom:-6px;right:-6px;width:24px;height:24px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.cv3-head-info{flex:1;}
+.cv3-nome{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;margin-bottom:3px;line-height:1.2;}
+.cv3-cargo{font-size:13px;font-weight:600;margin-bottom:12px;}
+.cv3-tags-head{display:flex;flex-wrap:wrap;gap:6px;}
+.cv3-tag-head{padding:4px 12px;border-radius:100px;font-size:10px;font-weight:600;}
+.cv3-body{padding:0 36px 24px;display:grid;grid-template-columns:1fr 210px;gap:32px;}
+.cv3-sec{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.cv3-sec-line{flex:1;height:1px;background:#E8E8E8;}
+.cv3-obj{font-size:12px;color:#555;line-height:1.8;margin-bottom:20px;}
+.cv3-exp-wrap{display:flex;gap:12px;margin-bottom:14px;}
+.cv3-exp-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.cv3-exp-cargo{font-size:13px;font-weight:700;}
+.cv3-exp-per{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;display:inline-block;margin:2px 0;}
+.cv3-exp-emp{font-size:11px;color:#888;margin-bottom:4px;}
+.cv3-exp-desc{font-size:11px;color:#666;line-height:1.7;padding-left:12px;}
+.cv3-exp-desc li{margin-bottom:2px;}
+.cv3-contato{font-size:11px;color:#555;line-height:2;}
+.cv3-skill-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.cv3-skill-nome{font-size:11px;font-weight:500;width:80px;flex-shrink:0;}
+.cv3-skill-bar{flex:1;height:6px;background:#F0F0F0;border-radius:100px;overflow:hidden;}
+.cv3-skill-fill{height:100%;border-radius:100px;}
+.cv3-form{font-size:11px;color:#555;line-height:1.8;}
+
+/* TEMPLATE 4 — PREMIUM ESCURO */
+.cv4{font-family:'Montserrat',sans-serif;background:#1A1A2E;color:#E8E8E8;min-height:680px;}
+.cv4-head{padding:36px 40px 28px;display:flex;gap:24px;align-items:center;border-bottom:1px solid #2A2A3E;}
+.cv4-foto{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;flex-shrink:0;border:3px solid;}
+.cv4-nome{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;margin-bottom:4px;}
+.cv4-cargo{font-size:13px;opacity:.6;margin-bottom:12px;}
+.cv4-contato-row{display:flex;flex-wrap:wrap;gap:16px;font-size:11px;opacity:.6;}
+.cv4-body{padding:28px 40px;display:grid;grid-template-columns:1fr 200px;gap:32px;}
+.cv4-sec{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #2A2A3E;}
+.cv4-obj{font-size:12px;color:#AAA;line-height:1.8;margin-bottom:20px;}
+.cv4-exp-cargo{font-size:13px;font-weight:700;color:#E8E8E8;}
+.cv4-exp-per{font-size:10px;color:#888;float:right;background:#2A2A3E;padding:2px 8px;border-radius:100px;}
+.cv4-exp-emp{font-size:11px;opacity:.6;margin-bottom:4px;clear:both;}
+.cv4-exp-desc{font-size:11px;color:#999;line-height:1.7;padding-left:12px;margin-bottom:14px;}
+.cv4-exp-desc li{margin-bottom:2px;}
+.cv4-skill-wrap{margin-bottom:9px;}
+.cv4-skill-nome{font-size:11px;color:#CCC;margin-bottom:3px;}
+.cv4-skill-bar{height:4px;background:#2A2A3E;border-radius:100px;overflow:hidden;}
+.cv4-skill-fill{height:100%;border-radius:100px;}
+.cv4-form{font-size:11px;color:#888;line-height:1.8;}
+.cv4-tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;margin:2px;background:#2A2A3E;}
+
+/* BLUR */
+.cv-blur-layer{position:absolute;bottom:0;left:0;right:0;height:200px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:28px;z-index:20;}
+.cv-wrap{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);}
+
+.modal-bg{display:none;position:fixed;inset:0;background:#000a;z-index:999;align-items:center;justify-content:center;padding:16px;}
+.modal-bg.on{display:flex;}
+.modal{background:var(--cinza);border:1px solid var(--borda);border-radius:20px;padding:36px 28px;max-width:400px;width:100%;text-align:center;font-family:'DM Sans',sans-serif;}
+.mbtn{width:100%;padding:14px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:none;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;}
+.mbtn.pix{background:#32BCAD;color:#fff;}
+.mbtn.zap{background:#25D366;color:#fff;}
+.mbtn:hover{opacity:.9;transform:translateY(-1px);}
+.mfechar{background:none;border:none;color:#555;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;margin-top:4px;}
+.pix-ok,.zap-info{display:none;background:#1A2E1A;border:1px solid #2A4A2A;border-radius:8px;padding:12px;margin-bottom:8px;font-size:12px;color:#88BB88;text-align:left;line-height:1.7;word-break:break-all;}
+
+footer{text-align:center;padding:48px 24px;border-top:1px solid #1A1A1A;color:var(--sub);font-size:13px;}
+@media(max-width:600px){
+  nav{padding:12px 16px;}
+  .form-grid{grid-template-columns:1fr;}
+  .fg.full{grid-column:1;}
+  .templates{grid-template-columns:repeat(2,1fr);}
+  .cv1{flex-direction:column;}
+  .cv1-side{width:100%;}
+  .cv2-body,.cv3-body,.cv4-body{grid-template-columns:1fr;}
+  .res-header{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Currículo<span>IA</span></div>
+  <button class="nav-btn" onclick="document.getElementById('gen').scrollIntoView({behavior:'smooth'})">✨ Criar Currículo</button>
+</nav>
+
+<section class="hero">
+  <div class="badge"><span class="dot"></span> Templates estilo Canva com IA</div>
+  <h1>Currículos <em>incríveis</em>em segundos</h1>
+  <p class="sub">4 templates profissionais coloridos. A IA escreve tudo por você em segundos!</p>
+  <button class="btn-hero" onclick="document.getElementById('gen').scrollIntoView({behavior:'smooth'})">✨ Criar meu currículo grátis</button>
+  <div class="stats">
+    <div><div class="stat-n">12.847</div><div class="stat-l">Currículos gerados</div></div>
+    <div><div class="stat-n">94%</div><div class="stat-l">Aprovação</div></div>
+    <div><div class="stat-n">4.9 ⭐</div><div class="stat-l">Avaliação</div></div>
+  </div>
+</section>
+
+<section class="gen-section" id="gen">
+  <div class="sec">
+    <div class="sec-tag">Gerador Premium</div>
+    <h2 class="sec-title">Escolha o template e crie!</h2>
+    <div class="form-card">
+      <h2>Seus dados</h2>
+      <p>Preencha e personalize — a IA faz o resto em segundos!</p>
+      <div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
+      <div class="form-grid">
+        <div class="fg"><label>Nome completo *</label><input id="nome" type="text" placeholder="Ex: Maria Silva" oninput="atualizarProg()"></div>
+        <div class="fg"><label>Cargo desejado *</label><input id="cargo" type="text" placeholder="Ex: Analista de Marketing" oninput="atualizarProg()"></div>
+        <div class="fg"><label>E-mail</label><input id="email" type="email" placeholder="seu@email.com" oninput="atualizarProg()"></div>
+        <div class="fg"><label>Telefone</label><input id="tel" type="text" placeholder="(11) 99999-9999" oninput="atualizarProg()"></div>
+        <div class="fg"><label>Cidade / Estado</label><input id="cidade" type="text" placeholder="São Paulo, SP" oninput="atualizarProg()"></div>
+        <div class="fg"><label>LinkedIn</label><input id="linkedin" type="text" placeholder="linkedin.com/in/voce" oninput="atualizarProg()"></div>
+        <div class="fg full"><label>Formação acadêmica *</label><textarea id="formacao" placeholder="Ex: Bacharelado em Administração — USP (2019–2023)" oninput="atualizarProg()"></textarea></div>
+        <div class="fg full"><label>Experiências profissionais *</label><textarea id="exp" placeholder="Ex: Analista na Empresa XYZ (2022–2024): aumentei vendas em 30%, gerenciei equipe de 5 pessoas..." oninput="atualizarProg()"></textarea></div>
+        <div class="fg full"><label>Habilidades</label><input id="skills" type="text" placeholder="Ex: Excel, Photoshop, inglês, liderança, gestão de projetos" oninput="atualizarProg()"></div>
+        <div class="fg full"><label>Área de atuação</label>
+          <select id="area" onchange="atualizarProg()">
+            <option value="">Selecione...</option>
+            <option>Administração e Gestão</option><option>Marketing e Publicidade</option>
+            <option>Tecnologia e TI</option><option>Recursos Humanos</option>
+            <option>Financeiro e Contabilidade</option><option>Vendas e Comercial</option>
+            <option>Saúde e Enfermagem</option><option>Engenharia</option>
+            <option>Educação</option><option>Direito</option><option>Outro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="custom-sec">
+        <div class="custom-label">🎨 Estilo do currículo</div>
+        <label style="margin-bottom:10px;display:block;">Template:</label>
+        <div class="templates">
+          <div class="topt on" onclick="escolherT(1)" id="t1">
+            <div class="topt-preview" style="display:flex;">
+              <div style="width:55px;background:linear-gradient(180deg,#E91E63,#C2185B);padding:6px;">
+                <div style="width:20px;height:20px;border-radius:50%;background:#fff5;margin:0 auto 4px;"></div>
+                <div style="height:2px;background:#fff5;margin-bottom:2px;border-radius:1px;"></div>
+                <div style="height:2px;background:#fff3;border-radius:1px;"></div>
+              </div>
+              <div style="flex:1;background:#fff;padding:6px;">
+                <div style="height:4px;background:#E91E6330;width:70%;border-radius:2px;margin-bottom:3px;"></div>
+                <div style="height:2px;background:#ddd;width:90%;border-radius:1px;margin-bottom:2px;"></div>
+                <div style="height:2px;background:#ddd;width:70%;border-radius:1px;"></div>
+              </div>
+            </div>
+            <div class="topt-name">Colorido</div>
+          </div>
+          <div class="topt" onclick="escolherT(2)" id="t2">
+            <div class="topt-preview">
+              <div style="height:32px;background:linear-gradient(135deg,#1565C0,#1976D2);position:relative;">
+                <div style="position:absolute;bottom:-10px;left:8px;width:20px;height:20px;border-radius:50%;background:#1976D2;border:2px solid #fff;"></div>
+              </div>
+              <div style="background:#fff;padding:14px 6px 6px;display:grid;grid-template-columns:1fr 24px;gap:3px;">
+                <div><div style="height:2px;background:#1976D230;width:80%;border-radius:1px;border-left:2px solid #1976D2;margin-bottom:2px;"></div><div style="height:2px;background:#eee;width:70%;border-radius:1px;"></div></div>
+                <div style="background:#EEF;border-radius:2px;"></div>
+              </div>
+            </div>
+            <div class="topt-name">Moderno</div>
+          </div>
+          <div class="topt" onclick="escolherT(3)" id="t3">
+            <div class="topt-preview" style="background:#FAFAFA;padding:6px;">
+              <div style="display:flex;gap:5px;align-items:center;margin-bottom:4px;">
+                <div style="width:18px;height:18px;border-radius:8px;background:#7C3AED;flex-shrink:0;"></div>
+                <div><div style="height:4px;background:#1A1A1A40;width:50px;border-radius:2px;margin-bottom:2px;"></div><div style="height:2px;background:#7C3AED40;width:35px;border-radius:1px;"></div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 20px;gap:3px;">
+                <div><div style="height:2px;background:#ddd;width:90%;border-radius:1px;margin-bottom:2px;"></div><div style="height:2px;background:#ddd;width:70%;border-radius:1px;"></div></div>
+                <div style="display:flex;flex-direction:column;gap:2px;"><div style="height:2px;background:#7C3AED30;border-radius:1px;"></div><div style="height:2px;background:#eee;border-radius:1px;"></div></div>
+              </div>
+            </div>
+            <div class="topt-name" style="background:#F5F5F5;color:#333;">Geométrico</div>
+          </div>
+          <div class="topt" onclick="escolherT(4)" id="t4">
+            <div class="topt-preview" style="background:#1A1A2E;padding:6px;">
+              <div style="display:flex;gap:5px;align-items:center;margin-bottom:5px;">
+                <div style="width:18px;height:18px;border-radius:50%;border:2px solid #00C896;background:#00C89620;flex-shrink:0;"></div>
+                <div><div style="height:4px;background:#ffffff40;width:50px;border-radius:2px;margin-bottom:2px;"></div><div style="height:2px;background:#00C89640;width:35px;border-radius:1px;"></div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 20px;gap:3px;">
+                <div><div style="height:2px;background:#ffffff20;width:90%;border-radius:1px;margin-bottom:2px;"></div><div style="height:2px;background:#ffffff15;width:70%;border-radius:1px;"></div></div>
+                <div style="background:#2A2A3E;border-radius:2px;"></div>
+              </div>
+            </div>
+            <div class="topt-name" style="background:#111;color:#aaa;">Premium</div>
+          </div>
+        </div>
+
+        <label style="margin-bottom:10px;display:block;">Cor principal:</label>
+        <div class="cores">
+          <div class="copt on" style="background:#E91E63;" onclick="escolherCor('#E91E63','#C2185B','#FCE4EC')" title="Rosa"></div>
+          <div class="copt" style="background:#1976D2;" onclick="escolherCor('#1976D2','#1565C0','#E3F2FD')" title="Azul"></div>
+          <div class="copt" style="background:#7C3AED;" onclick="escolherCor('#7C3AED','#5B21B6','#F5F3FF')" title="Roxo"></div>
+          <div class="copt" style="background:#00C896;" onclick="escolherCor('#00C896','#00A878','#E8FFF7')" title="Verde"></div>
+          <div class="copt" style="background:#FF6B35;" onclick="escolherCor('#FF6B35','#E55A25','#FFF3EE')" title="Laranja"></div>
+          <div class="copt" style="background:#DC2626;" onclick="escolherCor('#DC2626','#B91C1C','#FEF2F2')" title="Vermelho"></div>
+          <div class="copt" style="background:#0F766E;" onclick="escolherCor('#0F766E','#0D6B63','#F0FDFA')" title="Teal"></div>
+          <div class="copt" style="background:#374151;" onclick="escolherCor('#374151','#1F2937','#F9FAFB')" title="Grafite"></div>
+        </div>
+      </div>
+
+      <button class="gerar-btn" id="btnGerar" onclick="gerarCurriculo()">✨ Gerar meu currículo com IA</button>
+
+      <div class="loading-box" id="loading">
+        <div class="spin"></div>
+        <div style="color:var(--sub);font-size:15px;margin-bottom:8px;">Criando seu currículo...</div>
+        <div class="ls" id="l1">⏳ Enviando para IA...</div>
+        <div class="ls" id="l2">⏳ Escrevendo textos...</div>
+        <div class="ls" id="l3">⏳ Aplicando template...</div>
+        <div class="ls" id="l4">⏳ Finalizando...</div>
+      </div>
+
+      <div id="resultado">
+        <div class="res-header">
+          <h3>🎉 Pronto!</h3>
+          <div class="res-btns">
+            <button class="rbtn copiar" onclick="copiarCV()">📋 Copiar</button>
+            <button class="rbtn pagar" onclick="abrirModal()">⬇️ Baixar PDF — R$9,90</button>
+          </div>
+        </div>
+        <div class="cv-wrap" id="cvWrap">
+          <div id="cvPreview"></div>
+          <div class="cv-blur-layer" id="blurLayer">
+            <button id="unlockBtn" onclick="abrirModal()" style="border:none;padding:15px 36px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.3);">🔓 Desbloquear PDF — R$9,90</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo" style="font-size:20px;margin-bottom:10px;">Currículo<span style="color:var(--verde)">IA</span></div>
+  <p>Feito com ❤️ para o mercado brasileiro • © 2025</p>
+</footer>
+
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)fecharModal()">
+  <div class="modal">
+    <div style="font-size:44px;margin-bottom:14px;">🎯</div>
+    <div style="font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:8px;">Quase lá!</div>
+    <div style="color:var(--sub);font-size:13px;line-height:1.6;margin-bottom:20px;">Pague via PIX e envie o comprovante para receber seu currículo.</div>
+    <div style="background:var(--cinza2);border-radius:12px;padding:16px;margin-bottom:20px;">
+      <div style="font-family:'Playfair Display',serif;font-size:40px;color:var(--verde);font-weight:700;">R$ 9,90</div>
+      <div style="font-size:11px;color:#555;margin-top:3px;">Pagamento único • Sem mensalidade</div>
+    </div>
+    <button class="mbtn pix" onclick="copiarPix()">⚡ Copiar código PIX</button>
+    <div class="pix-ok" id="pixOk">✅ PIX copiado! Abra seu banco → PIX → Copia e Cola</div>
+    <button class="mbtn zap" onclick="mostrarContato()">📸 Já paguei! Quero meu currículo</button>
+    <div class="zap-info" id="zapInfo">
+      📸 Manda o comprovante no Instagram:<br>
+      <strong style="color:#fff;font-size:16px;">Direct do Instagram</strong><br>
+      <span style="color:#666;font-size:11px;">⏰ Entregamos todo dia até as 21h!</span>
+    </div>
+    <button class="mfechar" onclick="fecharModal()">← Voltar</button>
+  </div>
+</div>
+
+<script>
+var T=1, COR='#E91E63', COR_E='#C2185B', COR_L='#FCE4EC';
+var GEMINI_KEY='AIzaSyAtaA8fFglSx8Vv3y7800I7R1AkBzAP2HE';
+var PIX='00020126360014br.gov.bcb.pix0114+552197971222552040000530398654049.905802BR5925CALEBE MENEZES DOS SANTOS6009Sao Paulo62290525REC69C479A2E317C3720597786304660A';
+
+function atualizarProg(){
+  var c=['nome','cargo','email','formacao','exp','skills'];
+  var p=c.filter(function(id){return document.getElementById(id).value.trim();}).length;
+  document.getElementById('prog').style.width=Math.round(p/c.length*100)+'%';
+}
+
+function escolherT(n){
+  T=n;
+  [1,2,3,4].forEach(function(i){document.getElementById('t'+i).classList.remove('on');});
+  document.getElementById('t'+n).classList.add('on');
+}
+
+function escolherCor(c,ce,cl){
+  COR=c; COR_E=ce; COR_L=cl;
+  document.querySelectorAll('.copt').forEach(function(el){el.classList.remove('on');});
+  event.target.classList.add('on');
+}
+
+function animarLoad(){
+  [1,2,3,4].forEach(function(i){
+    var el=document.getElementById('l'+i);
+    el.classList.remove('on');
+    el.textContent=el.textContent.replace('✅','⏳');
+  });
+  var i=1;
+  var t=setInterval(function(){
+    if(i<=4){var el=document.getElementById('l'+i);el.classList.add('on');el.textContent=el.textContent.replace('⏳','✅');i++;}
+    else clearInterval(t);
+  },600);
+}
+
+async function gerarCurriculo(){
+  var nome=document.getElementById('nome').value.trim();
+  var cargo=document.getElementById('cargo').value.trim();
+  if(!nome||!cargo){alert('Preencha pelo menos nome e cargo!');return;}
+  var email=document.getElementById('email').value.trim();
+  var tel=document.getElementById('tel').value.trim();
+  var cidade=document.getElementById('cidade').value.trim();
+  var linkedin=document.getElementById('linkedin').value.trim();
+  var formacao=document.getElementById('formacao').value.trim();
+  var exp=document.getElementById('exp').value.trim();
+  var skills=document.getElementById('skills').value.trim();
+  var area=document.getElementById('area').value;
+
+  document.getElementById('btnGerar').disabled=true;
+  document.getElementById('loading').style.display='block';
+  document.getElementById('resultado').style.display='none';
+  animarLoad();
+
+  var prompt='Crie um currículo profissional brasileiro. Retorne APENAS JSON válido:\n{"objetivo":"2 linhas profissionais","resumo":"2 linhas diferenciais","experiencias":[{"cargo":"","empresa":"","periodo":"","descricao":"bullet1|bullet2|bullet3"}],"formacao_fmt":"formação","skills_list":["s1","s2","s3","s4","s5"]}\nNOME:'+nome+' CARGO:'+cargo+' ÁREA:'+area+' FORMAÇÃO:'+formacao+' EXP:'+exp+' SKILLS:'+skills;
+
+  try{
+    var res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key='+GEMINI_KEY,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:600,temperature:0.7}})
+    });
+    var data=await res.json();
+    var txt=data.candidates[0].content.parts[0].text.replace(/```json|```/g,'').trim();
+    var cv=JSON.parse(txt);
+    renderCV(nome,cargo,email,tel,cidade,linkedin,cv);
+  }catch(e){
+    renderCV(nome,cargo,email,tel,cidade,linkedin,{
+      objetivo:'Profissional motivado buscando oportunidade como '+cargo+'. Comprometido com resultados e crescimento.',
+      resumo:skills?'Competências em: '+skills+'.':'Profissional dedicado e proativo.',
+      experiencias:exp?[{cargo:cargo,empresa:'Empresa',periodo:'2020–2024',descricao:exp.substring(0,120)}]:[],
+      formacao_fmt:formacao||'A informar',
+      skills_list:skills?skills.split(',').map(function(s){return s.trim();}).slice(0,5):['Comunicação','Organização','Proatividade','Trabalho em equipe','Liderança']
+    });
+  }
+
+  document.getElementById('loading').style.display='none';
+  document.getElementById('resultado').style.display='block';
+  document.getElementById('btnGerar').disabled=false;
+
+  // Set unlock button color
+  var btn=document.getElementById('unlockBtn');
+  btn.style.background=COR; btn.style.color='#fff';
+  if(COR==='#E91E63'||COR==='#FF6B35'||COR==='#DC2626') btn.style.color='#fff';
+
+  // Set blur background based on template
+  var blurBg=T===4?'linear-gradient(to bottom,transparent,rgba(26,26,46,.97))':'linear-gradient(to bottom,transparent,rgba(255,255,255,.97))';
+  document.getElementById('blurLayer').style.background=blurBg;
+
+  document.getElementById('resultado').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderCV(nome,cargo,email,tel,cidade,linux,cv){
+  var c=COR, ce=COR_E, cl=COR_L;
+  var iniciais=nome.split(' ').map(function(n){return n[0]||'';}).slice(0,2).join('');
+  var pcts=[92,87,82,78,88];
+
+  var contato='';
+  if(email)contato+='<span>✉ '+email+'</span> ';
+  if(tel)contato+='<span>📱 '+tel+'</span> ';
+  if(cidade)contato+='<span>📍 '+cidade+'</span> ';
+
+  function exps(cls){
+    if(!cv.experiencias||!cv.experiencias.length)return'';
+    return cv.experiencias.map(function(e){
+      var b=(e.descricao||'').split('|').filter(Boolean).map(function(x){return'<li>'+x.trim()+'</li>';}).join('');
+      if(cls==='cv1')return'<div style="margin-bottom:13px;"><span class="cv1-exp-per">'+e.periodo+'</span><div class="cv1-exp-cargo">'+e.cargo+'</div><div class="cv1-exp-emp" style="color:'+c+';">'+e.empresa+'</div><ul class="cv1-exp-desc">'+b+'</ul></div>';
+      if(cls==='cv2')return'<div><span class="cv2-exp-per">'+e.periodo+'</span><div class="cv2-exp-cargo" style="color:'+c+';">'+e.cargo+'</div><div class="cv2-exp-emp">'+e.empresa+'</div><ul class="cv2-exp-desc">'+b+'</ul></div>';
+      if(cls==='cv4')return'<div><span class="cv4-exp-per">'+e.periodo+'</span><div class="cv4-exp-cargo">'+e.cargo+'</div><div class="cv4-exp-emp">'+e.empresa+'</div><ul class="cv4-exp-desc">'+b+'</ul></div>';
+      return'';
+    }).join('');
+  }
+
+  function skills1(){
+    if(!cv.skills_list)return'';
+    return cv.skills_list.map(function(s,i){return'<div class="cv1-skill-wrap"><div class="cv1-skill-nome">'+s+'</div><div class="cv1-skill-bar"><div class="cv1-skill-fill" style="width:'+(pcts[i]||80)+'%;"></div></div></div>';}).join('');
+  }
+  function skills2(){
+    if(!cv.skills_list)return'';
+    return cv.skills_list.map(function(s,i){return'<div class="cv2-skill-wrap"><div class="cv2-skill-nome">'+s+'</div><div class="cv2-skill-bar"><div class="cv2-skill-fill" style="width:'+(pcts[i]||80)+'%;background:'+c+';"></div></div></div>';}).join('');
+  }
+  function skills3(){
+    if(!cv.skills_list)return'';
+    return cv.skills_list.map(function(s,i){return'<div class="cv3-skill-row"><span class="cv3-skill-nome">'+s+'</span><div class="cv3-skill-bar"><div class="cv3-skill-fill" style="width:'+(pcts[i]||80)+'%;background:'+c+';"></div></div></div>';}).join('');
+  }
+  function skills4(){
+    if(!cv.skills_list)return'';
+    return cv.skills_list.map(function(s,i){return'<div class="cv4-skill-wrap"><div class="cv4-skill-nome">'+s+'</div><div class="cv4-skill-bar"><div class="cv4-skill-fill" style="width:'+(pcts[i]||80)+'%;background:'+c+';"></div></div></div>';}).join('');
+  }
+  function tags(){
+    if(!cv.skills_list)return'';
+    return cv.skills_list.map(function(s){return'<span class="cv2-tag" style="background:'+cl+';color:'+c+';">'+s+'</span>';}).join('');
+  }
+
+  var html='';
+
+  if(T===1){
+    html='<div class="cv1">'
+      +'<div class="cv1-side" style="background:linear-gradient(180deg,'+c+','+ce+');">'
+      +'<div class="cv1-foto" style="background:rgba(255,255,255,.2);">'+iniciais+'</div>'
+      +'<div class="cv1-nome">'+nome+'</div>'
+      +'<div class="cv1-cargo">'+cargo+'</div>'
+      +'<div class="cv1-divider"></div>'
+      +'<div class="cv1-sec">Contato</div>'
+      +'<div class="cv1-info">'+(email?email+'<br>':'')+(tel?tel+'<br>':'')+(cidade?cidade:'')+'</div>'
+      +'<div class="cv1-sec">Habilidades</div>'+skills1()
+      +'<div class="cv1-sec">Formação</div>'
+      +'<div class="cv1-info">'+cv.formacao_fmt+'</div>'
+      +'</div>'
+      +'<div class="cv1-main">'
+      +'<div class="cv1-main-nome">'+nome+'</div>'
+      +'<div class="cv1-main-cargo" style="color:'+c+';">'+cargo+'</div>'
+      +'<div class="cv1-main-sec" style="color:'+c+';border-color:'+c+';">Objetivo</div>'
+      +'<div class="cv1-obj">'+cv.objetivo+'</div>'
+      +(cv.experiencias&&cv.experiencias.length?'<div class="cv1-main-sec" style="color:'+c+';border-color:'+c+';">Experiência</div>'+exps('cv1'):'')
+      +'<div class="cv1-main-sec" style="color:'+c+';border-color:'+c+';">Resumo</div>'
+      +'<div class="cv1-obj">'+cv.resumo+'</div>'
+      +'</div></div>';
+
+  }else if(T===2){
+    html='<div class="cv2">'
+      +'<div class="cv2-head">'
+      +'<div class="cv2-head-bg" style="background:linear-gradient(135deg,'+ce+','+c+');">'
+      +'<div class="cv2-head-shapes"><div class="cv2-circle1" style="background:#fff;top:-60px;right:-40px;width:200px;height:200px;border-radius:50%;position:absolute;"></div><div class="cv2-circle2" style="background:#fff;bottom:-30px;left:60px;width:120px;height:120px;border-radius:50%;position:absolute;"></div></div></div>'
+      +'<div class="cv2-head-content">'
+      +'<div class="cv2-foto" style="background:'+ce+';">'+iniciais+'</div>'
+      +'<div class="cv2-head-txt"><div class="cv2-nome">'+nome+'</div><div class="cv2-cargo-head">'+cargo+'</div></div>'
+      +'</div></div>'
+      +'<div class="cv2-body">'
+      +'<div>'
+      +'<div class="cv2-sec" style="color:'+c+';border-color:'+c+';">Objetivo</div>'
+      +'<div class="cv2-obj">'+cv.objetivo+'</div>'
+      +(cv.experiencias&&cv.experiencias.length?'<div class="cv2-sec" style="color:'+c+';border-color:'+c+';">Experiência</div>'+exps('cv2'):'')
+      +'<div class="cv2-sec" style="color:'+c+';border-color:'+c+';">Formação</div>'
+      +'<div style="font-size:12px;color:#555;line-height:1.7;">'+cv.formacao_fmt+'</div>'
+      +'</div>'
+      +'<div>'
+      +'<div class="cv2-sec" style="color:'+c+';border-color:'+c+';">Contato</div>'
+      +(email?'<div class="cv2-contato-item"><div class="cv2-contato-icon" style="background:'+cl+';color:'+c+';">✉</div>'+email+'</div>':'')
+      +(tel?'<div class="cv2-contato-item"><div class="cv2-contato-icon" style="background:'+cl+';color:'+c+';">📱</div>'+tel+'</div>':'')
+      +(cidade?'<div class="cv2-contato-item"><div class="cv2-contato-icon" style="background:'+cl+';color:'+c+';">📍</div>'+cidade+'</div>':'')
+      +'<div class="cv2-sec" style="color:'+c+';border-color:'+c+';margin-top:14px;">Habilidades</div>'+skills2()
+      +'<div class="cv2-sec" style="color:'+c+';border-color:'+c+';margin-top:14px;">Skills</div><div>'+tags()+'</div>'
+      +'</div></div></div>';
+
+  }else if(T===3){
+    var exps3=cv.experiencias?cv.experiencias.map(function(e,i){
+      var b=(e.descricao||'').split('|').filter(Boolean).map(function(x){return'<li>'+x.trim()+'</li>';}).join('');
+      return'<div class="cv3-exp-wrap"><div style="display:flex;flex-direction:column;align-items:center;"><div class="cv3-exp-dot" style="background:'+c+';"></div>'+(i<cv.experiencias.length-1?'<div style="width:1px;flex:1;background:#E8E8E8;margin-top:4px;min-height:20px;"></div>':'')+'</div><div><div class="cv3-exp-cargo">'+e.cargo+'</div><span class="cv3-exp-per" style="background:'+cl+';color:'+c+';">'+e.periodo+'</span><div class="cv3-exp-emp">'+e.empresa+'</div><ul class="cv3-exp-desc">'+b+'</ul></div></div>';
+    }).join(''):'';
+    var tags3=cv.skills_list?cv.skills_list.map(function(s){return'<span style="background:'+cl+';color:'+c+';padding:4px 12px;border-radius:100px;font-size:10px;font-weight:600;display:inline-block;margin:2px;">'+s+'</span>';}).join(''):'';
+    html='<div class="cv3">'
+      +'<div class="cv3-head">'
+      +'<div class="cv3-foto-wrap"><div class="cv3-foto" style="background:'+c+';">'+iniciais+'</div><div class="cv3-foto-badge">✨</div></div>'
+      +'<div class="cv3-head-info"><div class="cv3-nome">'+nome+'</div><div class="cv3-cargo" style="color:'+c+';">'+cargo+'</div>'
+      +'<div class="cv3-tags-head">'+cv.skills_list.slice(0,3).map(function(s){return'<span class="cv3-tag-head" style="background:'+cl+';color:'+c+';">'+s+'</span>';}).join('')+'</div>'
+      +'</div></div>'
+      +'<div class="cv3-body">'
+      +'<div>'
+      +'<div class="cv3-sec" style="color:'+c+';">Objetivo<div class="cv3-sec-line"></div></div>'
+      +'<div class="cv3-obj">'+cv.objetivo+'</div>'
+      +(exps3?'<div class="cv3-sec" style="color:'+c+';">Experiência<div class="cv3-sec-line"></div></div>'+exps3:'')
+      +'</div>'
+      +'<div>'
+      +'<div class="cv3-sec" style="color:'+c+';">Contato<div class="cv3-sec-line"></div></div>'
+      +'<div class="cv3-contato">'+(email?'✉ '+email+'<br>':'')+(tel?'📱 '+tel+'<br>':'')+(cidade?'📍 '+cidade:'')+'</div>'
+      +'<div class="cv3-sec" style="color:'+c+';margin-top:14px;">Habilidades<div class="cv3-sec-line"></div></div>'+skills3()
+      +'<div class="cv3-sec" style="color:'+c+';margin-top:14px;">Formação<div class="cv3-sec-line"></div></div>'
+      +'<div class="cv3-form">'+cv.formacao_fmt+'</div>'
+      +'<div class="cv3-sec" style="color:'+c+';margin-top:14px;">Skills<div class="cv3-sec-line"></div></div>'
+      +'<div>'+tags3+'</div>'
+      +'</div></div></div>';
+
+  }else{
+    var tags4=cv.skills_list?cv.skills_list.map(function(s){return'<span class="cv4-tag" style="color:'+c+';">'+s+'</span>';}).join(''):'';
+    html='<div class="cv4">'
+      +'<div class="cv4-head">'
+      +'<div class="cv4-foto" style="border-color:'+c+';background:'+c+'20;color:'+c+';">'+iniciais+'</div>'
+      +'<div><div class="cv4-nome">'+nome+'</div><div class="cv4-cargo" style="color:'+c+';">'+cargo+'</div>'
+      +'<div class="cv4-contato-row">'+contato+'</div></div>'
+      +'</div>'
+      +'<div class="cv4-body">'
+      +'<div>'
+      +'<div class="cv4-sec" style="color:'+c+';border-color:#2A2A3E;">Objetivo</div>'
+      +'<div class="cv4-obj">'+cv.objetivo+'</div>'
+      +(cv.experiencias&&cv.experiencias.length?'<div class="cv4-sec" style="color:'+c+';border-color:#2A2A3E;">Experiência</div>'+exps('cv4'):'')
+      +'<div class="cv4-sec" style="color:'+c+';border-color:#2A2A3E;">Formação</div>'
+      +'<div class="cv4-form">'+cv.formacao_fmt+'</div>'
+      +'</div>'
+      +'<div>'
+      +'<div class="cv4-sec" style="color:'+c+';border-color:#2A2A3E;">Resumo</div>'
+      +'<div style="font-size:11px;color:#AAA;line-height:1.8;margin-bottom:14px;">'+cv.resumo+'</div>'
+      +'<div class="cv4-sec" style="color:'+c+';border-color:#2A2A3E;">Habilidades</div>'+skills4()
+      +'<div class="cv4-sec" style="color:'+c+';border-color:#2A2A3E;margin-top:14px;">Skills</div>'
+      +'<div>'+tags4+'</div>'
+      +'</div></div></div>';
+  }
+
+  document.getElementById('cvPreview').innerHTML=html;
+}
+
+function copiarCV(){
+  var txt=document.getElementById('cvPreview').innerText.trim();
+  var el=document.createElement('textarea');el.value=txt;el.style.cssText='position:fixed;top:0;left:0;opacity:0;';
+  document.body.appendChild(el);el.focus();el.select();document.execCommand('copy');document.body.removeChild(el);
+  var btn=document.querySelector('.rbtn.copiar');btn.textContent='✅ Copiado!';
+  setTimeout(function(){btn.textContent='📋 Copiar';},2000);
+}
+
+function copiarPix(){
+  var el=document.createElement('textarea');el.value=PIX;el.style.cssText='position:fixed;top:0;left:0;opacity:0;';
+  document.body.appendChild(el);el.focus();el.select();document.execCommand('copy');document.body.removeChild(el);
+  document.getElementById('pixOk').style.display='block';
+}
+
+function mostrarContato(){
+  var d=document.getElementById('zapInfo');
+  d.style.display=d.style.display==='block'?'none':'block';
+}
+
+function abrirModal(){document.getElementById('pixOk').style.display='none';document.getElementById('zapInfo').style.display='none';document.getElementById('modalBg').classList.add('on');}
+function fecharModal(){document.getElementById('modalBg').classList.remove('on');}
+</script>
+</body>
+</html>
